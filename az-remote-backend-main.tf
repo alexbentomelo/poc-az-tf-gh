@@ -1,4 +1,28 @@
-# Generate a random storage name
+# Define Terraform provider
+terraform {
+  required_version = ">= 1.3"
+  backend "azurerm" {
+    resource_group_name  = "pay-tfstate-rg"
+    storage_account_name = "paypoc"
+    container_name       = "core-tfstate"
+    key                  = "actions.tfstate"
+  }
+  required_providers {
+    azurerm = {
+      version = "~>3.2"
+      source  = "hashicorp/azurerm"
+    }
+  }
+}
+# Configure the Azure provider
+provider "azurerm" { 
+  features {}  
+}
+
+
+
+
+# Generate a random storage namu
 resource "random_string" "tf-name" {
   length = 8
   upper = false
