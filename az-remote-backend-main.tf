@@ -24,7 +24,7 @@ provider "azurerm" {
 
 # Generate a random storage namu
 resource "random_string" "tf-name" {
-  length = 8
+  length = 10
   upper = false
   numeric = true
   lower = true
