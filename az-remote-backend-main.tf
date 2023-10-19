@@ -2,7 +2,7 @@
 terraform {
   required_version = ">= 1.3"
   backend "azurerm" {
-    resource_group_name  = "pay-tfstate-rg"
+    resource_group_name  = "pay-rg"
     storage_account_name = "paypoc"
     container_name       = "core-tfstate"
     key                  = "actions.tfstate"
